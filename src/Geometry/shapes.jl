@@ -1,12 +1,14 @@
-# file: src/Geometry/shapes.jl
+# Defines the geometric and intrinsic properties of objects.
 
-# abstract type for all shapes
-abstract type Shape end
+abstract type AbstractParticle end
 
-# a sphere shape
-# this will be the basic building block for our simulations
-struct Sphere{T<:AbstractFloat} <: Shape
-    radius::T
-    position::Vector{T}
-    velocity::Vector{T}
+struct Sphere <: AbstractParticle
+    mass::Float64
+    radius::Float64
 end
+
+# You can define other shapes here later, e.g.:
+# struct Cube <: AbstractParticle
+#     mass::Float64
+#     side_length::Float64
+# end

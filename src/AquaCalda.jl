@@ -1,25 +1,16 @@
 module AquaCalda
 
-using DifferentialEquations
-using Plots
+# Include and define your sub-modules
+include("Geometry/Geometry.jl")
+include("DEM/DEM.jl")
+include("HeatTransfer/HeatTransfer.jl")
 
-function lorenz!(du, u, p, t)
-    du[1] = 10.0 * (u[2] - u[1])
-    du[2] = u[1] * (28.0 - u[3]) - u[2]
-    du[3] = u[1] * u[2] - (8 / 3) * u[3]
-end
+# Use the modules to bring their functions into AquaCalda's namespace
+using .Geometry
+using .DEM
+using .HeatTransfer
 
-function solve_lorenz()
-    u0 = [1.0; 0.0; 0.0]
-    tspan = (0.0, 100.0)
-    prob = ODEProblem(lorenz!, u0, tspan)
-    sol = solve(prob)
-    return sol
-end
-
-function plot_lorenz()
-    sol = solve_lorenz()
-    plot(sol, vars = (1, 2, 3))
-end
+# Export the functions you want users to have access to
+# export System, step!, Sphere # etc.
 
 end # module
