@@ -10,7 +10,7 @@ The goal of this project is to create a modern, extensible, and user-friendly to
 
 ## Project Status: Pre-Alpha
 
-This project is in the initial **3-month planning and architectural phase**.
+This project is in the initial **6-month planning and architectural phase**.
 
 There is currently **no stable or usable code**. The repository is being used to track initial development, design ideas, and establish the core structure. Please do not expect any functional components at this time.
 
